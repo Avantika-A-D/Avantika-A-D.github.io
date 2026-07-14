@@ -160,7 +160,7 @@ body.light .nav { background: rgba(240, 235, 224, 0.88); }
   .nav-links a { padding: 12px 5vw; font-size: 13px; width: 100%; border-bottom: 1px solid var(--border); }
   .nav-links a:last-child { border-bottom: none; }
   /* Hide resume button from theme toggle overlap on mobile */
-  #themeToggle { top: 12px; right: 60px; }
+  #themeToggle { top: 12px; right: 70px; }
 }
 
 /* ── Theme toggle ───────────────────────────────────────────── */
