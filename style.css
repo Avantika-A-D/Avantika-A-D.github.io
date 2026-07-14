@@ -43,6 +43,65 @@ body {
   background-size: 200px;
 }
 
+/* ── Aurora background ─────────────────────────────────────── */
+.aurora {
+  position: fixed; inset: 0;
+  z-index: -1; pointer-events: none;
+  overflow: hidden;
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.22;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.aurora-1 {
+  width: 46vw; height: 46vw;
+  top: -10%; left: -8%;
+  background: var(--accent);
+  animation: auroraDrift1 26s ease-in-out infinite alternate;
+}
+
+.aurora-2 {
+  width: 40vw; height: 40vw;
+  bottom: -12%; right: -6%;
+  background: var(--accent2);
+  animation: auroraDrift2 32s ease-in-out infinite alternate;
+}
+
+.aurora-3 {
+  width: 34vw; height: 34vw;
+  top: 40%; left: 55%;
+  background: var(--accent);
+  opacity: 0.12;
+  animation: auroraDrift3 38s ease-in-out infinite alternate;
+}
+
+@keyframes auroraDrift1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(6vw, 8vh) scale(1.15); }
+}
+
+@keyframes auroraDrift2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-7vw, -6vh) scale(1.1); }
+}
+
+@keyframes auroraDrift3 {
+  0%   { transform: translate(-4vw, 0) scale(1); }
+  100% { transform: translate(4vw, 6vh) scale(1.2); }
+}
+
+body.light .aurora-blob { opacity: 0.14; mix-blend-mode: multiply; }
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob { animation: none; }
+}
+
 /* ── Utility ────────────────────────────────────────────────── */
 .mono   { font-family: var(--font-mono); }
 .muted  { color: var(--muted); }
